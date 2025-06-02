@@ -1,3 +1,3 @@
 # myportfolio
 
-So here, I will continuously update this portfolio if by chance I have a new project, make new UI changes, and such.
+So here, I will continuously update this portfolio if by chance I have a new project, UI changes, and such.
