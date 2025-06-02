@@ -20,6 +20,13 @@ document.addEventListener('DOMContentLoaded', function() {
     const moonIcon = document.getElementById('moonIcon');
     const themeModeText = document.getElementById('themeModeText');
 
+    // Code to update the copyright year dynamically
+    var yearSpan = document.getElementById('year');
+    if (yearSpan) {
+        yearSpan.textContent = new Date().getFullYear();
+    }
+
+
     const enableDarkMode = () => {
         document.body.classList.add('dark-mode');
         brandLogo.src = './Images/jzznllvnc-dark.png';

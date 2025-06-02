@@ -198,7 +198,7 @@
     </main>
 
     <footer>
-        <p>&copy; <?php echo date("Y"); ?> jzznllvnc. All rights reserved.</p>
+        <p>&copy; <span id="year"></span> jzznllvnc. All rights reserved.</p>
     </footer>
 
     <button id="scrollToTopBtn" class="scroll-to-top-btn">
