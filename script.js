@@ -10,8 +10,10 @@ document.getElementById('modalCloseButton').addEventListener('click', function()
 });
 
 document.addEventListener('DOMContentLoaded', function() {
-    const header = document.querySelector('header');
-    const navLinks = document.querySelectorAll('header nav ul li a');
+    const mainHeader = document.getElementById('mainHeader');
+    const headerNavLinks = document.querySelectorAll('header nav ul li a');
+    const dropdownNavLinks = document.querySelectorAll('#dropdownMenu ul li a');
+    const allNavLinks = [...headerNavLinks, ...dropdownNavLinks];
     const sections = document.querySelectorAll('main section');
     const scrollToTopBtn = document.getElementById('scrollToTopBtn');
     const themeToggleButton = document.getElementById('themeToggleButton');
@@ -19,13 +21,17 @@ document.addEventListener('DOMContentLoaded', function() {
     const sunIcon = document.getElementById('sunIcon');
     const moonIcon = document.getElementById('moonIcon');
     const themeModeText = document.getElementById('themeModeText');
+    const menuBarContainer = document.getElementById('menuBarContainer');
+    const menuBarIcon = document.getElementById('menuBarIcon');
+    const dropdownMenu = document.getElementById('dropdownMenu');
+
+    let lastScrollY = window.scrollY;
 
     // Code to update the copyright year dynamically
     var yearSpan = document.getElementById('year');
     if (yearSpan) {
         yearSpan.textContent = new Date().getFullYear();
     }
-
 
     const enableDarkMode = () => {
         document.body.classList.add('dark-mode');
@@ -34,6 +40,11 @@ document.addEventListener('DOMContentLoaded', function() {
         sunIcon.style.opacity = '0';
         moonIcon.style.opacity = '1';
         themeModeText.textContent = 'Switch to Light Mode';
+
+        const aboutBrandLogo = document.getElementById('aboutBrandLogo');
+        if (aboutBrandLogo) {
+            aboutBrandLogo.src = './Images/jzznllvnc-dark.png';
+        }
     };
 
     const disableDarkMode = () => {
@@ -43,6 +54,11 @@ document.addEventListener('DOMContentLoaded', function() {
         sunIcon.style.opacity = '1';
         moonIcon.style.opacity = '0';
         themeModeText.textContent = 'Switch to Dark Mode';
+
+        const aboutBrandLogo = document.getElementById('aboutBrandLogo');
+        if (aboutBrandLogo) {
+            aboutBrandLogo.src = './Images/jzznllvnc.png';
+        }
     };
 
     const savedTheme = localStorage.getItem('theme');
@@ -61,19 +77,19 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
     const updateActiveNavLink = () => {
-        const headerHeight = header.offsetHeight;
+        const headerHeight = mainHeader.offsetHeight;
         let currentActiveSectionId = 'about';
 
         for (let i = sections.length - 1; i >= 0; i--) {
             const section = sections[i];
-            const sectionTop = section.offsetTop - headerHeight - 50;
+            const sectionTop = section.offsetTop - headerHeight - 100;
             if (window.scrollY >= sectionTop) {
                 currentActiveSectionId = section.id;
                 break;
             }
         }
 
-        navLinks.forEach(link => {
+        allNavLinks.forEach(link => {
             link.classList.remove('active');
             if (link.getAttribute('href').substring(1) === currentActiveSectionId) {
                 link.classList.add('active');
@@ -83,7 +99,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     updateActiveNavLink();
 
-    navLinks.forEach(anchor => {
+    allNavLinks.forEach(anchor => {
         anchor.addEventListener('click', function (e) {
             e.preventDefault();
 
@@ -91,12 +107,14 @@ document.addEventListener('DOMContentLoaded', function() {
             const targetSection = document.getElementById(targetId);
 
             if (targetSection) {
+                dropdownMenu.classList.remove('show');
+
                 window.scrollTo({
-                    top: targetSection.offsetTop - header.offsetHeight,
+                    top: targetSection.offsetTop - mainHeader.offsetHeight,
                     behavior: 'smooth'
                 });
 
-                navLinks.forEach(link => {
+                allNavLinks.forEach(link => {
                     link.classList.remove('active');
                 });
                 this.classList.add('active');
@@ -104,8 +122,41 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
-    window.addEventListener('scroll', updateActiveNavLink);
+    window.addEventListener('scroll', () => {
+        const currentScrollY = window.scrollY;
 
+        const headerHideThreshold = mainHeader.offsetHeight + 50;
+
+        if (currentScrollY > lastScrollY && currentScrollY > headerHideThreshold) {
+            mainHeader.classList.add('hidden');
+            menuBarContainer.classList.add('show');
+        } else {
+            mainHeader.classList.remove('hidden');
+            menuBarContainer.classList.remove('show');
+            dropdownMenu.classList.remove('show');
+        }
+
+        if (currentScrollY > 300) {
+            scrollToTopBtn.classList.add('show');
+        } else {
+            scrollToTopBtn.classList.remove('show');
+        }
+
+        lastScrollY = currentScrollY;
+        updateActiveNavLink();
+    });
+
+    // Toggle dropdown menu
+    menuBarIcon.addEventListener('click', function(e) {
+        e.stopPropagation();
+        dropdownMenu.classList.toggle('show');
+    });
+
+    document.addEventListener('click', function(event) {
+        if (!menuBarContainer.contains(event.target) && dropdownMenu.classList.contains('show')) {
+            dropdownMenu.classList.remove('show');
+        }
+    });
 
     const observerOptions = {
         root: null,
@@ -123,14 +174,6 @@ document.addEventListener('DOMContentLoaded', function() {
 
     sections.forEach(section => {
         observer.observe(section);
-    });
-
-    window.addEventListener('scroll', () => {
-        if (window.scrollY > 300) {
-            scrollToTopBtn.classList.add('show');
-        } else {
-            scrollToTopBtn.classList.remove('show');
-        }
     });
 
     scrollToTopBtn.addEventListener('click', () => {
@@ -173,34 +216,26 @@ document.addEventListener('DOMContentLoaded', function() {
             submitBtn.disabled = true;
             submitBtn.textContent = 'Sending...';
 
-            const formData = new FormData(contactForm);
+            var templateParams = {
+                from_name: nameInput.value,
+                from_email: emailInput.value,
+                message: messageInput.value
+            };
 
-            fetch('function/send_email.php', {
-                method: 'POST',
-                body: formData
-            })
-            .then(response => {
-                if (!response.ok) {
-                    throw new Error('Network response was not ok ' + response.statusText);
-                }
-                return response.json();
-            })
-            .then(data => {
-                if (data.status === 'success') {
-                    showCustomAlert('Message Sent!', data.message);
-                    contactForm.reset();
-                } else {
-                    showCustomAlert('Error', data.message);
-                }
-            })
-            .catch(error => {
-                console.error('There was a problem with the fetch operation:', error);
-                showCustomAlert('Error', 'Could not send message. Please try again later.');
-            })
-            .finally(() => {
-                submitBtn.disabled = false;
-                submitBtn.textContent = 'Send Message';
-            });
+            // Use emailjs.send() for contact form
+            emailjs.send('service_4qpgl7h', 'template_41dey72', templateParams)
+                .then(function(response) {
+                   console.log('SUCCESS!', response.status, response.text);
+                   showCustomAlert('Message Sent!', 'Thank you for your message! I will get back to you soon.');
+                   contactForm.reset();
+                }, function(error) {
+                   console.log('FAILED...', error);
+                   showCustomAlert('Error', 'Oops! Something went wrong and we couldn\'t send your message.');
+                })
+                .finally(() => {
+                    submitBtn.disabled = false;
+                    submitBtn.textContent = 'Send Message';
+                });
         });
     }
 
@@ -239,32 +274,69 @@ document.addEventListener('DOMContentLoaded', function() {
 
             const formData = new FormData(subscribeForm);
 
+            let logSuccess = false;
+            let emailSuccess = false;
+            const totalPromises = 2;
+            let completedPromises = 0;
+
+            const checkCompletion = () => {
+                completedPromises++;
+                if (completedPromises === totalPromises) {
+                    subscribeButton.disabled = false;
+                    subscribeButton.textContent = 'Connect With Me';
+                    if (logSuccess && emailSuccess) {
+                        showCustomAlert('Success!', 'Thank you for connecting! Your email has been received and I\'ve been notified.');
+                        subscribeForm.reset();
+                    } else if (logSuccess && !emailSuccess) {
+                        showCustomAlert('Success!', 'Your email has been received, but I couldn\'t send a notification. Please check EmailJS setup.');
+                        subscribeForm.reset();
+                    } else {
+                        showCustomAlert('Error', 'Could not save your email. Please try again later.');
+                    }
+                }
+            };
+
+            // 1. Send data to your PHP script for logging
             fetch('function/subscribe.php', {
                 method: 'POST',
                 body: formData
             })
             .then(response => {
                 if (!response.ok) {
-                    throw new Error('Network response was not ok ' + response.statusText);
+                    throw new Error('Network response for log was not ok ' + response.statusText);
                 }
                 return response.json();
             })
             .then(data => {
                 if (data.status === 'success') {
-                    showCustomAlert('Success!', data.message);
-                    subscribeForm.reset();
+                    logSuccess = true;
                 } else {
-                    showCustomAlert('Error', data.message);
+                    console.error('Logging failed:', data.message);
                 }
             })
             .catch(error => {
-                console.error('There was a problem with the subscribe fetch operation:', error);
-                showCustomAlert('Error', 'Could not subscribe. Please try again later.');
+                console.error('There was a problem with the subscribe log operation:', error);
             })
             .finally(() => {
-                subscribeButton.disabled = false;
-                subscribeButton.textContent = 'Connect With Me';
+                checkCompletion();
             });
+
+            // 2. Send email notification using EmailJS
+            const emailTemplateParams = {
+                subscriber_email: emailInput.value
+            };
+
+            emailjs.send('service_4qpgl7h', 'template_exn8ctd', emailTemplateParams)
+                .then(function(response) {
+                   console.log('EmailJS Notification SUCCESS!', response.status, response.text);
+                   emailSuccess = true;
+                }, function(error) {
+                   console.error('EmailJS Notification FAILED...', error);
+                })
+                .finally(() => {
+                    checkCompletion();
+                });
+
         });
     }
 });
