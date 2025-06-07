@@ -250,6 +250,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
+    // --- SUBSCRIBE FORM HANDLER ---
     const subscribeForm = document.getElementById('subscribeForm');
     if (subscribeForm) {
         subscribeForm.addEventListener('submit', function(e) {
@@ -272,71 +273,23 @@ document.addEventListener('DOMContentLoaded', function() {
             subscribeButton.disabled = true;
             subscribeButton.textContent = 'Submitting...';
 
-            const formData = new FormData(subscribeForm);
-
-            let logSuccess = false;
-            let emailSuccess = false;
-            const totalPromises = 2;
-            let completedPromises = 0;
-
-            const checkCompletion = () => {
-                completedPromises++;
-                if (completedPromises === totalPromises) {
-                    subscribeButton.disabled = false;
-                    subscribeButton.textContent = 'Connect With Me';
-                    if (logSuccess && emailSuccess) {
-                        showCustomAlert('Success!', 'Thank you for connecting! Your email has been received and I\'ve been notified.');
-                        subscribeForm.reset();
-                    } else if (logSuccess && !emailSuccess) {
-                        showCustomAlert('Success!', 'Your email has been received, but I couldn\'t send a notification. Please check EmailJS setup.');
-                        subscribeForm.reset();
-                    } else {
-                        showCustomAlert('Error', 'Could not save your email. Please try again later.');
-                    }
-                }
-            };
-
-            // 1. Send data to your PHP script for logging
-            fetch('function/subscribe.php', {
-                method: 'POST',
-                body: formData
-            })
-            .then(response => {
-                if (!response.ok) {
-                    throw new Error('Network response for log was not ok ' + response.statusText);
-                }
-                return response.json();
-            })
-            .then(data => {
-                if (data.status === 'success') {
-                    logSuccess = true;
-                } else {
-                    console.error('Logging failed:', data.message);
-                }
-            })
-            .catch(error => {
-                console.error('There was a problem with the subscribe log operation:', error);
-            })
-            .finally(() => {
-                checkCompletion();
-            });
-
-            // 2. Send email notification using EmailJS
             const emailTemplateParams = {
                 subscriber_email: emailInput.value
             };
 
             emailjs.send('service_4qpgl7h', 'template_exn8ctd', emailTemplateParams)
                 .then(function(response) {
-                   console.log('EmailJS Notification SUCCESS!', response.status, response.text);
-                   emailSuccess = true;
+                    console.log('EmailJS Notification SUCCESS!', response.status, response.text);
+                    showCustomAlert('Success!', 'Thank you for connecting! Your email has been received and I\'ve been notified.');
+                    subscribeForm.reset();
                 }, function(error) {
-                   console.error('EmailJS Notification FAILED...', error);
+                    console.error('EmailJS Notification FAILED...', error);
+                    showCustomAlert('Error', 'Could not save your email. Please try again later.');
                 })
                 .finally(() => {
-                    checkCompletion();
+                    subscribeButton.disabled = false;
+                    subscribeButton.textContent = 'Connect With Me';
                 });
-
         });
     }
 });
