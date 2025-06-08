@@ -5,8 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portfolio - jzznllvnc.</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
     <link rel="stylesheet" href="style.css">
-    <link rel="icon" href="./Images/jzznllvnc.png" type="image/png">
+    <link rel="icon" href="./assets/icons/jzznllvnc.png" type="image/png">
 </head>
 <body>
 
@@ -21,7 +22,7 @@
     <header id="mainHeader">
         <div class="container">
             <div class="header-left">
-                <img src="./Images/jzznllvnc.png" alt="Avatar" class="avatar" id="brandLogo">
+                <img src="./assets/icons/jzznllvnc.png" alt="Avatar" class="avatar" id="brandLogo">
                 <a href="#about" class="logo">jzznllvnc.</a>
             </div>
             <nav>
@@ -33,15 +34,15 @@
                 </ul>
             </nav>
             <div class="theme-toggle-button" id="themeToggleButton">
-                <img src="./Images/moon.png" alt="Light Mode" class="theme-icon sun-icon" id="sunIcon">
-                <img src="./Images/sun.png" alt="Dark Mode" class="theme-icon moon-icon" id="moonIcon">
+                <img src="./assets/icons/moon.png" alt="Light Mode" class="theme-icon sun-icon" id="sunIcon">
+                <img src="./assets/icons/sun.png" alt="Dark Mode" class="theme-icon moon-icon" id="moonIcon">
                 <span id="themeModeText" class="theme-text"></span>
             </div>
         </div>
     </header>
 
     <div id="menuBarContainer" class="menu-bar-container">
-        <img src="./Images/menu.svg" alt="Menu" class="menu-icon" id="menuBarIcon">
+        <img src="./assets/icons/menu.svg" alt="Menu" class="menu-icon" id="menuBarIcon">
         <div class="dropdown-menu" id="dropdownMenu">
             <ul>
                 <li><a href="#about">About</a></li>
@@ -64,11 +65,11 @@
                         <div class="email-signup">
                             <form id="subscribeForm">
                                 <input type="email" placeholder="Email address" class="email-input" id="subscribeEmail" name="email">
-                                <button type="submit" class="connect-button" id="subscribeButton">Connect With Me</button>
+                                <button type="submit" class="connect-button" id="subscribeButton"><i class="fa-solid fa-link" style="color: #ffffff;"></i>&nbsp;&nbsp;&nbsp;Connect With Me</button>
                             </form>
                         </div>
                         </div>
-                        <img src="./Images/jzznllvnc-dark.png" alt="Brand Logo Background" class="brand-logo-background" id="aboutBrandLogo">
+                        <img src="./assets/icons/jzznllvnc-dark.png" alt="Brand Logo Background" class="brand-logo-background" id="aboutBrandLogo">
                         </div>
                     </div>
                 </div>
@@ -81,7 +82,7 @@
                 <div class="grid-container">
                         <div class="project-card">
                             <img
-                                src="./Images/hr.gif"
+                                src="./assets/images//hr.gif"
                                 alt="Project 1"
                                 onerror="this.onerror=null;this.src='https://placehold.co/400x250/F9FAFB/1A202C?text=Placeholder';"
                             />
@@ -96,7 +97,7 @@
                         </div>
                         <div class="project-card">
                             <img
-                                src="./Images/techno.png"
+                                src="./assets/images/techno.png"
                                 alt="Project 2"
                                 onerror="this.onerror=null;this.src='https://placehold.co/400x250/F9FAFB/1A202C?text=Placeholder';"
                             />
@@ -105,7 +106,7 @@
                                 <p>
                                     A technopreneurship business proposal that we did in my third-year, second semester of college.
                                 </p>
-                                <a href="./documents/technopreneurship.pdf" download="technopreneurship.pdf" class="btn">Download PDF</a>
+                                <a href="./assets/documents/technopreneurship.pdf" download="technopreneurship.pdf" class="btn">Download PDF</a>
                             </div>
                         </div>
                     <div class="project-card">
@@ -203,7 +204,7 @@
                             <label for="message">Message</label>
                             <textarea id="message" name="message" rows="5" placeholder="Your message..." required></textarea>
                         </div>
-                        <button type="submit" class="btn submit-btn">Send Message</button>
+                        <button type="submit" class="btn submit-btn"><i class="fa-solid fa-paper-plane" style="color: #ffffff;"></i>&nbsp;&nbsp;&nbsp;Send Message</button>
                     </form>
                 </div>
             </div>

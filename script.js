@@ -35,7 +35,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     const enableDarkMode = () => {
         document.body.classList.add('dark-mode');
-        brandLogo.src = './Images/jzznllvnc-dark.png';
+        brandLogo.src = './assets/icons/jzznllvnc-dark.png';
         localStorage.setItem('theme', 'dark');
         sunIcon.style.opacity = '0';
         moonIcon.style.opacity = '1';
@@ -43,13 +43,13 @@ document.addEventListener('DOMContentLoaded', function() {
 
         const aboutBrandLogo = document.getElementById('aboutBrandLogo');
         if (aboutBrandLogo) {
-            aboutBrandLogo.src = './Images/jzznllvnc-dark.png';
+            aboutBrandLogo.src = './assets/icons/jzznllvnc-dark.png';
         }
     };
 
     const disableDarkMode = () => {
         document.body.classList.remove('dark-mode');
-        brandLogo.src = './Images/jzznllvnc.png';
+        brandLogo.src = './assets/icons/jzznllvnc.png';
         localStorage.setItem('theme', 'light');
         sunIcon.style.opacity = '1';
         moonIcon.style.opacity = '0';
@@ -57,7 +57,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
         const aboutBrandLogo = document.getElementById('aboutBrandLogo');
         if (aboutBrandLogo) {
-            aboutBrandLogo.src = './Images/jzznllvnc.png';
+            aboutBrandLogo.src = './assets/icons/jzznllvnc.png';
         }
     };
 

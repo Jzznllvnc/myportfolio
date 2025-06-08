@@ -7,7 +7,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
     <link rel="stylesheet" href="style.css">
-    <link rel="icon" href="./Images/jzznllvnc.png" type="image/png">
+    <link rel="icon" href="./assets/icons/jzznllvnc.png" type="image/png">
 </head>
 <body class="gallery-page">
     <div class="gallery-container">
@@ -19,7 +19,7 @@
         <h2>Landing Page</h2>
         <div class="image-gallery">
             <div class="gallery-item">
-                <img src="./Images/landing.png" alt="Landing Page Screenshot">
+                <img src="./assets/images/landing.png" alt="Landing Page Screenshot">
             </div>
         </div>
 
@@ -29,19 +29,19 @@
         <br>
         <div class="image-gallery">
             <div class="gallery-item">
-                <img src="./Images/admin-image1.png" alt="Admin Screenshot 1" class="previewable">
+                <img src="./assets/images/admin-image1.png" alt="Admin Screenshot 1" class="previewable">
             </div>
             <div class="gallery-item">
-                <img src="./Images/admin-image2.png" alt="Admin Screenshot 2" class="previewable">
+                <img src="./assets/images/admin-image2.png" alt="Admin Screenshot 2" class="previewable">
             </div>
             <div class="gallery-item">
-                <img src="./Images/admin-image3.png" alt="Admin Screenshot 3" class="previewable">
+                <img src="./assets/images/admin-image3.png" alt="Admin Screenshot 3" class="previewable">
             </div>
             <div class="gallery-item">
-                <img src="./Images/admin-image4.png" alt="Admin Screenshot 4" class="previewable">
+                <img src="./assets/images/admin-image4.png" alt="Admin Screenshot 4" class="previewable">
             </div>
             <div class="gallery-item">
-                <img src="./Images/admin-image5.png" alt="Admin Screenshot 5" class="previewable">
+                <img src="./assets/images/admin-image5.png" alt="Admin Screenshot 5" class="previewable">
             </div>
         </div>
 
@@ -51,16 +51,16 @@
         <br>
         <div class="image-gallery">
             <div class="gallery-item">
-                <img src="./Images/user-image1.png" alt="Applicant Screenshot 1" class="previewable">
+                <img src="./assets/images/user-image1.png" alt="Applicant Screenshot 1" class="previewable">
             </div>
             <div class="gallery-item">
-                <img src="./Images/user-image2.png" alt="Applicant Screenshot 2" class="previewable">
+                <img src="./assets/images/user-image2.png" alt="Applicant Screenshot 2" class="previewable">
             </div>
             <div class="gallery-item">
-                <img src="./Images/user-image3.png" alt="Applicant Screenshot 3" class="previewable">
+                <img src="./assets/images/user-image3.png" alt="Applicant Screenshot 3" class="previewable">
             </div>
             <div class="gallery-item">
-                <img src="./Images/user-image4.png" alt="Applicant Screenshot 4" class="previewable">
+                <img src="./assets/images/user-image4.png" alt="Applicant Screenshot 4" class="previewable">
             </div>
         </div>
 
