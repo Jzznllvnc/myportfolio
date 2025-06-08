@@ -1,7 +1,16 @@
-function showCustomAlert(title, message) {
+function showCustomAlert(title, message, iconHtml = '') {
     const modalOverlay = document.getElementById('customAlertModal');
-    document.getElementById('modalTitle').textContent = title;
-    document.getElementById('modalMessage').textContent = message;
+    const modalTitle = document.getElementById('modalTitle');
+    const modalMessage = document.getElementById('modalMessage');
+    const modalIconContainer = document.getElementById('modalIconContainer');
+
+    modalTitle.innerHTML = title;
+    modalMessage.innerHTML = message;
+
+    if (modalIconContainer) {
+        modalIconContainer.innerHTML = iconHtml;
+    }
+
     modalOverlay.classList.add('show');
 }
 
@@ -194,22 +203,22 @@ document.addEventListener('DOMContentLoaded', function() {
             const submitBtn = contactForm.querySelector('.submit-btn');
 
             if (nameInput.value.trim() === '') {
-                showCustomAlert('Validation Error', 'Please enter your name.');
+                showCustomAlert('Error', 'Please enter your name.', '<i class="fa-solid fa-triangle-exclamation fa-3x" style="color: #ff0000;"></i>');
                 nameInput.focus();
                 return;
             }
             if (emailInput.value.trim() === '') {
-                showCustomAlert('Validation Error', 'Please enter your email address.');
+                showCustomAlert('Error', 'Please enter your email address.', '<i class="fa-solid fa-triangle-exclamation fa-3x" style="color: #ff0000;"></i>');
                 emailInput.focus();
                 return;
             }
             if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(emailInput.value)) {
-                showCustomAlert('Validation Error', 'Please enter a valid email address.');
+                showCustomAlert('Error', 'Please enter a valid address.', '<i class="fa-solid fa-triangle-exclamation fa-3x" style="color: #ff0000;"></i>');
                 emailInput.focus();
                 return;
             }
             if (messageInput.value.trim() === '') {
-                showCustomAlert('Validation Error', 'Please enter your message.');
+                showCustomAlert('Error', 'Please enter your message.', '<i class="fa-solid fa-triangle-exclamation fa-3x" style="color: #ff0000;"></i>');
                 messageInput.focus();
                 return;
             }
@@ -226,11 +235,11 @@ document.addEventListener('DOMContentLoaded', function() {
             emailjs.send('service_4qpgl7h', 'template_41dey72', templateParams)
                 .then(function(response) {
                    console.log('SUCCESS!', response.status, response.text);
-                   showCustomAlert('Message Sent!', 'Thank you for your message! I will get back to you soon.');
+                   showCustomAlert('Message Sent!', 'Thank you for your message! I will get back to you soon.', '<i class="fa-solid fa-circle-check fa-3x" style="color: #63E6BE;"></i>');
                    contactForm.reset();
                 }, function(error) {
                    console.log('FAILED...', error);
-                   showCustomAlert('Error', 'Oops! Something went wrong and we couldn\'t send your message.');
+                   showCustomAlert('Error', 'Oops! Something went wrong and we couldn\'t send your message.', '<i class="fa-solid fa-triangle-exclamation fa-3x" style="color: #ff0000;"></i>');
                 })
                 .finally(() => {
                     submitBtn.disabled = false;
@@ -260,12 +269,12 @@ document.addEventListener('DOMContentLoaded', function() {
             const subscribeButton = document.getElementById('subscribeButton');
 
             if (emailInput.value.trim() === '') {
-                showCustomAlert('Validation Error', 'Please enter your email address.');
+                showCustomAlert('Oops!', 'Please enter your email address.', '<i class="fa-solid fa-face-sad-cry fa-3x" style="color: #74C0FC;"></i>');
                 emailInput.focus();
                 return;
             }
             if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(emailInput.value)) {
-                showCustomAlert('Validation Error', 'Please enter a valid email address.');
+                showCustomAlert('Error', 'Please enter a valid email address.', '<i class="fa-solid fa-triangle-exclamation fa-3x" style="color: #ff0000;"></i>');
                 emailInput.focus();
                 return;
             }
@@ -280,11 +289,11 @@ document.addEventListener('DOMContentLoaded', function() {
             emailjs.send('service_4qpgl7h', 'template_exn8ctd', emailTemplateParams)
                 .then(function(response) {
                     console.log('EmailJS Notification SUCCESS!', response.status, response.text);
-                    showCustomAlert('Success!', 'Thank you for connecting! Your email has been received and I\'ve been notified.');
+                    showCustomAlert('Success!', 'Thank you for connecting! Your email has been received and I\'ve been notified.', '<i class="fa-solid fa-circle-check fa-3x" style="color: #63E6BE;"></i>');
                     subscribeForm.reset();
                 }, function(error) {
                     console.error('EmailJS Notification FAILED...', error);
-                    showCustomAlert('Error', 'Could not save your email. Please try again later.');
+                    showCustomAlert('Error', 'Could not save your email. Please try again later.', '<i class="fa-solid fa-triangle-exclamation fa-3x" style="color: #ff0000;"></i>');
                 })
                 .finally(() => {
                     subscribeButton.disabled = false;

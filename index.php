@@ -13,7 +13,7 @@
 
     <div id="customAlertModal" class="modal-overlay">
         <div class="modal-content">
-            <h3 id="modalTitle"></h3>
+            <div id="modalIconContainer" style="text-align: center; margin-bottom: 10px;"></div> <h3 id="modalTitle"></h3>
             <p id="modalMessage"></p>
             <button id="modalCloseButton">OK</button>
         </div>
@@ -29,7 +29,7 @@
                 <ul>
                     <li><a href="#about" class="active">About</a></li>
                     <li><a href="#works">Works</a></li>
-                    <li><a href="#services">Services</a></li>
+                    <li><a href="#services">Tools</a></li>
                     <li><a href="#contact">Contact</a></li>
                 </ul>
             </nav>
@@ -47,7 +47,7 @@
             <ul>
                 <li><a href="#about">About</a></li>
                 <li><a href="#works">Works</a></li>
-                <li><a href="#services">Services</a></li>
+                <li><a href="#services">Tools</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
         </div>
@@ -58,9 +58,15 @@
             <div class="container">
                 <div class="content-wrapper">
                     <div class="hero-text-content">
-                        <h1>Building web designs, consistency <span class="purple-highlight">& experience.</span></h1>
+                        <div class="hero-intro">
+                            <img src="./assets/images/me.jpeg" alt="Avatar" class="avatar-hero" id="heroAvatar">
+                            <p class="greeting">Hi, I'm Jazz 🙌</p>
+                        </div>
+                        <div class="tagline">
+                            <h1>Building web designs, consistency <span class="purple-highlight">& experience.</span></h1>
+                        </div>
                         <p class="lead-description">
-                            I see myself focusing on UI/UX Design, Responsive Web Design, and Visual Development. Oh, and I also offer services related to PC (building, troubleshooting, etc.) 😄
+                            I see myself focusing on UI/UX Design, Responsive Web Design, and Visual Development. Oh, and I also offer services related to PC (building, troubleshooting, etc.)
                         </p>
                         <div class="email-signup">
                             <form id="subscribeForm">
@@ -68,10 +74,8 @@
                                 <button type="submit" class="connect-button" id="subscribeButton"><i class="fa-solid fa-link" style="color: #ffffff;"></i>&nbsp;&nbsp;&nbsp;Connect With Me</button>
                             </form>
                         </div>
-                        </div>
-                        <img src="./assets/icons/jzznllvnc-dark.png" alt="Brand Logo Background" class="brand-logo-background" id="aboutBrandLogo">
-                        </div>
                     </div>
+                    <img src="./assets/icons/jzznllvnc-dark.png" alt="Brand Logo Background" class="brand-logo-background" id="aboutBrandLogo">
                 </div>
             </div>
         </section>
@@ -89,8 +93,7 @@
                             <div class="project-info">
                                 <h3>Hospital Management System</h3>
                                 <p>
-                                    A Hospital Management Mystem specifically HR Department, wherein we manage applicants' details, interviews, trainings, etc.
-                                    We also did this with Integration process throughout each department's databases.
+                                    A functional and integration-ready system that we did as a Finals project. Our group was assigned to manage HR Department.
                                 </p>
                                 <a href="gallery.php" class="btn">See Gallery</a>
                             </div>
@@ -129,7 +132,7 @@
 
         <section id="services" class="fade-in-section">
             <div class="container">
-                <h2>My Services</h2>
+                <h2>Tools & Technologies</h2>
                 <div class="grid-container">
                     <div class="skill-card">
                         <h3>Frontend Development</h3>
@@ -165,7 +168,7 @@
             <div class="container">
                 <div class="contact-content-wrapper">
                     <div class="contact-info-column">
-                        <h2>Get in Touch</h2>
+                        <h2>Let's Connect</h2>
                         <p>
                             Have a question or want to work together? Feel free to reach out!
                         </p>

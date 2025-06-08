@@ -17,6 +17,7 @@
     --dark-mode-text-primary: #F7FAFC;
     --dark-mode-text-secondary: #CBD5E0;
     --dark-mode-border: #4A5568;
+    --avatar-border: #58bcee;
 }
 
 body {
@@ -192,7 +193,7 @@ main {
 }
 
 section {
-    padding: 10rem 0;
+    padding: 5rem 0;
     position: relative;
 }
 
@@ -244,8 +245,8 @@ section h2::after {
 
 #about {
     background-color: var(--light-background);
-    padding-top: 15rem;
-    padding-bottom: 10rem;
+    padding-top: 8rem;
+    padding-bottom: 15rem;
     overflow: hidden;
     position: relative;
     z-index: 1;
@@ -259,8 +260,8 @@ body.dark-mode #about {
 #about .brand-logo-background {
     position: absolute;
     bottom: -15%;
-    right: -10%;
-    width: 600px;
+    right: -35%;
+    width: 800px;
     height: auto;
     opacity: 0.2;
     transform: rotate(15deg);
@@ -270,7 +271,7 @@ body.dark-mode #about {
 }
 
 body.dark-mode #about .brand-logo-background {
-    opacity: 0.1;
+    opacity: 0.2;
 }
 
 @media (max-width: 768px) {
@@ -284,21 +285,55 @@ body.dark-mode #about .brand-logo-background {
 
 #about .container {
     position: relative;
+    margin-left: 10rem;
     z-index: 2;
 }
 
 #about .content-wrapper {
     display: flex;
-    flex-direction: column;
+    flex-direction: row-reverse;
     align-items: center;
     justify-content: space-between;
     gap: 4rem;
-    text-align: center;
+    text-align: left;
 }
 
 #about .hero-text-content {
     flex: 1;
     text-align: left;
+    margin-left: 0;
+    margin-right: auto;
+}
+
+.hero-intro {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-bottom: 1rem;
+}
+
+.avatar-hero {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 2rem;
+    border: 3px solid var(--button-gradient-end);
+}
+
+.greeting {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--secondary-text);
+    margin-bottom: 1.5rem;
+}
+
+body.dark-mode .greeting {
+    color: var(--dark-mode-text-secondary);
+}
+
+.tagline {
+    margin-bottom: 1.5rem;
 }
 
 #about h1 {
@@ -344,6 +379,7 @@ body.dark-mode #about p.lead-description {
     gap: 1rem;
     flex-wrap: wrap;
     margin-top: 2rem;
+    justify-content: flex-start;
 }
 
 .email-signup .email-input {
@@ -503,6 +539,10 @@ body.dark-mode .project-card p {
     box-shadow: 0 5px 10px rgba(123, 97, 255, 0.4);
 }
 
+#services {
+    padding: 15rem 0;
+}
+
 #services .grid-container {
     display: grid;
     grid-template-columns: 1fr;
@@ -561,17 +601,18 @@ body.dark-mode .skill-card ul {
 }
 
 .skill-card ul li::before {
-    content: '→';
+    content: '➤';
     color: var(--primary-purple);
     font-weight: bold;
     position: absolute;
     left: 0;
     top: 50%;
     transform: translateY(-50%);
-    font-size: 1.2em;
+    font-size: 1em;
 }
 
 #contact {
+    padding: 10rem 0;
     text-align: center;
     background-color: var(--light-background);
 }
