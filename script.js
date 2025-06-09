@@ -34,6 +34,10 @@ document.addEventListener('DOMContentLoaded', function() {
     const menuBarIcon = document.getElementById('menuBarIcon');
     const dropdownMenu = document.getElementById('dropdownMenu');
 
+    // New icon elements
+    const callIcon = document.getElementById('callIcon');
+    const githubIcon = document.getElementById('githubIcon');
+
     let lastScrollY = window.scrollY;
 
     // Code to update the copyright year dynamically
@@ -54,6 +58,13 @@ document.addEventListener('DOMContentLoaded', function() {
         if (aboutBrandLogo) {
             aboutBrandLogo.src = './assets/icons/jzznllvnc-dark.png';
         }
+
+        if (callIcon) {
+            callIcon.src = './assets/icons/phone-white.svg';
+        }
+        if (githubIcon) {
+            githubIcon.src = './assets/icons/github-white.svg';
+        }
     };
 
     const disableDarkMode = () => {
@@ -67,6 +78,13 @@ document.addEventListener('DOMContentLoaded', function() {
         const aboutBrandLogo = document.getElementById('aboutBrandLogo');
         if (aboutBrandLogo) {
             aboutBrandLogo.src = './assets/icons/jzznllvnc.png';
+        }
+
+        if (callIcon) {
+            callIcon.src = './assets/icons/phone.svg';
+        }
+        if (githubIcon) {
+            githubIcon.src = './assets/icons/github.svg';
         }
     };
 
@@ -254,7 +272,8 @@ document.addEventListener('DOMContentLoaded', function() {
             e.preventDefault();
             const phoneNumber = this.getAttribute('data-phone-number');
             if (phoneNumber) {
-                showCustomAlert('My Phone Number', phoneNumber);
+                const flagIconHtml = '<img src="./assets/icons/ph-flag.png" alt="Philippine Flag" style="width: 2em; height: 1.5em; margin-right: 0.5em; vertical-align: middle;">';
+                showCustomAlert('My Phone Number', flagIconHtml + phoneNumber);
             }
         });
     }
