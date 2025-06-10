@@ -177,8 +177,8 @@ body.dark-mode .theme-toggle-button .moon-icon {
 
 .theme-toggle-button .theme-text {
     margin-left: 2rem;
-    font-size: 0.9rem;
-    font-weight: 500;
+    font-size: 1rem;
+    font-weight: 600;
     color: var(--secondary-text);
     white-space: nowrap;
     transition: color 0.3s ease;
@@ -947,7 +947,7 @@ body.dark-mode .menu-bar-container .menu-icon {
     display: none;
     position: absolute;
     top: calc(100% + 1rem);
-    right: 0;
+    right: 0rem;
     background-color: #ffffff;
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
     border-radius: 0.75rem;
@@ -1011,16 +1011,29 @@ body.dark-mode .dropdown-menu ul li a {
 
 @media (max-width: 767px) {
     header .container {
-        gap: 1rem;
+        padding: 0 1rem;
+        justify-content: space-between;
+        gap: 0.5rem;
+        flex-direction: column;
     }
 
     header nav {
-        display: block;
-        text-align: center; 
+        display: none;
     }
 
-    header .header-left .avatar {
-        display: none;
+    .header-left {
+        gap: 0.5rem;
+    }
+
+    .menu-bar-container {
+        display: flex;
+        top: 2.5rem;
+        right: 1rem;
+        opacity: 1;
+    }
+
+    .theme-toggle-button {
+        align-items: center;
     }
 
     .social-icons-header {
