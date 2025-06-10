@@ -540,11 +540,11 @@ body.dark-mode .project-card p {
     box-shadow: 0 5px 10px rgba(123, 97, 255, 0.4);
 }
 
-#tools {
+#setup {
     padding: 15rem 0;
 }
 
-#tools .grid-container {
+#setup .grid-container {
     display: grid;
     grid-template-columns: 1fr;
     gap: 2.5rem;
@@ -1163,7 +1163,7 @@ body.dark-mode .dropdown-menu ul li a {
         grid-template-columns: repeat(2, 1fr);
     }
 
-    #tools .grid-container {
+    #setup .grid-container {
         grid-template-columns: repeat(2, 1fr);
     }
 
@@ -1180,7 +1180,7 @@ body.dark-mode .dropdown-menu ul li a {
         padding-right: 2rem;
     }
 
-    #contact .social-links {
+    #setup .social-links {
         justify-content: flex-start;
     }
 
@@ -1213,7 +1213,7 @@ body.dark-mode .dropdown-menu ul li a {
         grid-template-columns: repeat(3, 1fr);
     }
 
-    #tools .grid-container {
+    #setup .grid-container {
         grid-template-columns: repeat(3, 1fr);
     }
 }

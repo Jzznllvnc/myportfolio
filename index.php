@@ -29,7 +29,7 @@
                 <ul>
                     <li><a href="#about" class="active">About</a></li>
                     <li><a href="#projects">Projects</a></li>
-                    <li><a href="#tools">Tools</a></li>
+                    <li><a href="#setup">Setup</a></li>
                     <li><a href="#contact">Contact</a></li>
                 </ul>
             </nav>
@@ -47,7 +47,7 @@
             <ul>
                 <li><a href="#about">About</a></li>
                 <li><a href="#projects">Projects</a></li>
-                <li><a href="#tools">Tools</a></li>
+                <li><a href="#setup">Setup</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
         </div>
@@ -130,12 +130,12 @@
             </div>
         </section>
 
-        <section id="tools" class="fade-in-section">
+        <section id="setup" class="fade-in-section">
             <div class="container">
-                <h2>Tools & Technologies</h2>
+                <h2>How I Build</h2>
                 <div class="grid-container">
                     <div class="skill-card">
-                        <h3>Frontend Development</h3>
+                        <h3>Frontend Craft</h3>
                         <ul>
                             <li>HTML5 & CSS3</li>
                             <li>JavaScript (ES6+)</li>
@@ -152,11 +152,11 @@
                         </ul>
                     </div>
                     <div class="skill-card">
-                        <h3>Tools & Technologies</h3>
+                        <h3>Trusted Stack</h3>
                         <ul>
-                            <li>Git & GitHub</li>
-                            <li>VS Code</li>
-                            <li>XAMPP</li>
+                            <li>VS Code (Primary IDE)</li>
+                            <li>Git & GitHub (Version Control)</li>
+                            <li>XAMPP (Local Environment)</li>
                             <li>Basic UI/UX Principles</li>
                         </ul>
                     </div>
