@@ -137,9 +137,9 @@
                     <div class="skill-card">
                         <h3>Frontend Craft</h3>
                         <ul>
-                            <li>HTML5 & CSS3</li>
+                            <li>HTML5</li>
+                            <li>CSS</li>
                             <li>JavaScript (ES6+)</li>
-                            <li>Responsive Design</li>
                         </ul>
                     </div>
                     <div class="skill-card">
@@ -148,7 +148,6 @@
                             <li>PHP</li>
                             <li>MySQL (Database)</li>
                             <li>APIs</li>
-                            <li>Vanilla JS</li>
                         </ul>
                     </div>
                     <div class="skill-card">
@@ -157,7 +156,6 @@
                             <li>VS Code (Primary IDE)</li>
                             <li>Git & GitHub (Version Control)</li>
                             <li>XAMPP (Local Environment)</li>
-                            <li>Basic UI/UX Principles</li>
                         </ul>
                     </div>
                 </div>
