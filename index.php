@@ -86,14 +86,16 @@
                 <div class="grid-container">
                         <div class="project-card">
                             <img
-                                src="./assets/images//hr.gif"
+                                src="./assets/images/hr.gif"
                                 alt="Project 1"
                                 onerror="this.onerror=null;this.src='https://placehold.co/400x250/F9FAFB/1A202C?text=Placeholder';"
                             />
                             <div class="project-info">
                                 <h3>Hospital Management System</h3>
                                 <p>
-                                    A functional and integration-ready system that we did as a Finals project (third-year). Our group was assigned to manage HR Department.
+                                    A web-based application designed to streamline hospital operations, partricularly recruitment and applicant management.
+                                    <br><br>
+                                    Tools used: <strong>HTML, CSS, JavaScript, PHP, MySQL</strong>
                                 </p>
                                 <a href="gallery.php" class="btn">See Gallery</a>
                             </div>
@@ -108,22 +110,25 @@
                                 <h3>RentMySkill</h3>
                                 <p>
                                     A technopreneurship business proposal that we did in my third-year, second semester of college.
+                                    <br><br>
+                                    Tools used: <strong>Google Docs, Figma, Canva</strong>
                                 </p>
                                 <a href="./assets/documents/technopreneurship.pdf" download="technopreneurship.pdf" class="btn">Download PDF</a>
                             </div>
                         </div>
                     <div class="project-card">
                         <img
-                            src="https://placehold.co/400x250/F9FAFB/1A202C?text=Project+3"
+                            src="./assets/images/summup.png"
                             alt="Project 3"
                             onerror="this.onerror=null;this.src='https://placehold.co/400x250/F9FAFB/1A202C?text=Placeholder';"
                         />
                         <div class="project-info">
-                            <h3>Project Title Three</h3>
+                            <h3>SummUp</h3>
                             <p>
-                                Pending Description for my Project 3.
+                                It uses AI to extract key points from any document (PDFs, DOCx, Images with texts) and delivers concise summaries in seconds.<br><br>
+                                Tools used: <strong>HTML, CSS, JavaScript, NodeJS, Gemini API</strong>
                             </p>
-                            <a href="#" target="_blank" rel="noopener noreferrer" class="btn">View Project</a>
+                            <a href="https://summup-alpha.vercel.app" target="_blank" rel="noopener noreferrer" class="btn">Try It</a>
                         </div>
                     </div>
                 </div>
@@ -147,6 +152,7 @@
                         <ul>
                             <li>PHP</li>
                             <li>MySQL (Database)</li>
+                            <li>NodeJS</li>
                             <li>APIs</li>
                         </ul>
                     </div>

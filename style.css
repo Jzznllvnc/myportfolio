@@ -635,6 +635,9 @@ body.dark-mode .skill-card ul {
     background-image: url('./assets/icons/mysql.svg');
 }
 .skill-card:nth-of-type(2) ul li:nth-child(3)::before {
+    background-image: url('./assets/icons/nodejs.svg');
+}
+.skill-card:nth-of-type(2) ul li:nth-child(4)::before {
     background-image: url('./assets/icons/api.svg');
 }
 
