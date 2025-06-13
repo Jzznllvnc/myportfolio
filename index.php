@@ -59,7 +59,7 @@
                 <div class="content-wrapper">
                     <div class="hero-text-content">
                         <div class="hero-intro">
-                            <img src="./assets/images/me.jpeg" alt="Avatar" class="avatar-hero" id="heroAvatar">
+                            <img src="./assets/images/me.jpg" alt="Avatar" class="avatar-hero" id="heroAvatar">
                             <p class="greeting">Hi, I'm Jazz 🙌</p>
                         </div>
                         <div class="tagline">
