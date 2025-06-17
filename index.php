@@ -91,9 +91,9 @@
                                 onerror="this.onerror=null;this.src='https://placehold.co/400x250/F9FAFB/1A202C?text=Placeholder';"
                             />
                             <div class="project-info">
-                                <h3>Hospital Management System</h3>
+                                <h3>AppliQ</h3>
                                 <p>
-                                    A web-based application designed to streamline hospital operations, partricularly recruitment and applicant management.
+                                    A web-based system designed to streamline hospital operations, partricularly recruitment and applicant management.
                                     <br><br>
                                     Tools used: <strong>HTML, CSS, JavaScript, PHP, MySQL</strong>
                                 </p>
