@@ -1395,7 +1395,6 @@ body.dark-mode .gallery-item:hover {
     object-fit: cover;
 }
 
-/* Styles for image description overlay */
 .image-description-overlay {
     position: absolute;
     top: 0;
@@ -1417,13 +1416,11 @@ body.dark-mode .gallery-item:hover {
     box-sizing: border-box;
 }
 
-/* Desktop hover effect */
 .gallery-item:hover .image-description-overlay {
     opacity: 1;
     transform: translateY(0);
 }
 
-/* Class to be added by JavaScript for brief visibility */
 .image-description-overlay.show-briefly {
     opacity: 1;
     transform: translateY(0);
@@ -1455,12 +1452,11 @@ body.dark-mode .gallery-item:hover {
         gap: 1.5rem;
     }
 
-    /* Revert mobile-specific permanent display, it will be handled by JS */
     .image-description-overlay {
-        position: absolute; /* Revert to absolute for overlay */
-        height: 100%; /* Revert to full height */
-        background-color: rgba(123, 97, 255, 0.9); /* Revert to transparent background */
-        border-radius: 0.75rem; /* Revert to match parent */
+        position: absolute;
+        height: 100%;
+        background-color: rgba(123, 97, 255, 0.9);
+        border-radius: 0.75rem;
         top: 0;
         left: 0;
         padding-top: 1rem;
@@ -1468,11 +1464,11 @@ body.dark-mode .gallery-item:hover {
     }
 
     .gallery-item-content {
-        display: block; /* Revert to block display */
+        display: block
     }
 
     .gallery-item img {
-        border-radius: 0.75rem; /* Revert to rounded corners */
+        border-radius: 0.75rem;
     }
 
     .image-description-overlay h3 {

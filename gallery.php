@@ -121,7 +121,6 @@
         </div>
         <script>
             
-        // Modified image preview to work with the new structure
         document.querySelectorAll('.gallery-item-content.previewable').forEach(item => {
             item.addEventListener('click', function() {
                 const imgElement = this.querySelector('img');
@@ -138,16 +137,11 @@
             if (e.target === this) this.style.display = 'none';
         };
 
-        // Intersection Observer for brief description display on scroll for mobile
         if (window.matchMedia("(max-width: 767px)").matches) {
             const observerOptions = {
-                root: null, // viewport
-                // Define a margin around the root (viewport) to shrink the area considered for intersection.
-                // This means the element must be further into the viewport (closer to center) to intersect.
-                rootMargin: '-10% 0px -10% 0px', // Adjusted to 10% from top and bottom
-                // A higher threshold (e.g., 0.7 or 70%) means a larger portion of the target element
-                // must be visible within the root's intersection area to trigger the effect.
-                threshold: 0.7 // Increased threshold to require more of the image to be centered
+                root: null,
+                rootMargin: '-10% 0px -10% 0px',
+                threshold: 0.7
             };
 
             const observer = new IntersectionObserver((entries, observer) => {
@@ -155,18 +149,15 @@
                     const overlay = entry.target.querySelector('.image-description-overlay');
                     if (overlay) {
                         if (entry.isIntersecting) {
-                            // Clear any existing timeout to prevent flickering if re-intersected quickly
                             if (overlay.showTimeout) {
                                 clearTimeout(overlay.showTimeout);
                             }
                             overlay.classList.add('show-briefly');
-                            // Hide after 3 seconds
                             overlay.showTimeout = setTimeout(() => {
                                 overlay.classList.remove('show-briefly');
                                 overlay.showTimeout = null;
                             }, 3000);
                         } else {
-                            // If it leaves the intersecting area, immediately hide it
                             if (overlay.showTimeout) {
                                 clearTimeout(overlay.showTimeout);
                                 overlay.showTimeout = null;
@@ -181,6 +172,7 @@
                 observer.observe(item);
             });
         }
+        
         </script>
         </div>
 </body>
