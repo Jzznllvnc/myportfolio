@@ -7,11 +7,8 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
     <link rel="stylesheet" href="style.css">
-    <link rel="icon" href="./assets/icons/jzznllvnc.png" type="image/png">
-</head>
-<body>
-
-    <div id="customAlertModal" class="modal-overlay">
+    <link rel="icon" href="./assets/icons/jzznllvnc-dark.png" type="image/png"> </head>
+<body class="dark-mode"> <div id="customAlertModal" class="modal-overlay">
         <div class="modal-content">
             <div id="modalIconContainer" style="text-align: center; margin-bottom: 10px;"></div> <h3 id="modalTitle"></h3>
             <p id="modalMessage"></p>
@@ -22,8 +19,7 @@
     <header id="mainHeader">
         <div class="container">
             <div class="header-left">
-                <img src="./assets/icons/jzznllvnc.png" alt="Avatar" class="avatar" id="brandLogo">
-                <a href="#about" class="logo">jzznllvnc.</a>
+                <img src="./assets/icons/jzznllvnc-dark.png" alt="Avatar" class="avatar" id="brandLogo"> <a href="#about" class="logo">jzznllvnc.</a>
             </div>
             <nav>
                 <ul>
@@ -33,12 +29,7 @@
                     <li><a href="#contact">Contact</a></li>
                 </ul>
             </nav>
-            <div class="theme-toggle-button" id="themeToggleButton">
-                <img src="./assets/icons/dark.png" alt="Light Mode" class="theme-icon sun-icon" id="sunIcon">
-                <img src="./assets/icons/light.png" alt="Dark Mode" class="theme-icon moon-icon" id="moonIcon">
-                <span id="themeModeText" class="theme-text"></span>
             </div>
-        </div>
     </header>
 
     <div id="menuBarContainer" class="menu-bar-container">
@@ -75,8 +66,7 @@
                             </form>
                         </div>
                     </div>
-                    <img src="./assets/icons/jzznllvnc-dark.png" alt="Brand Logo Background" class="brand-logo-background" id="aboutBrandLogo">
-                </div>
+                    <img src="./assets/icons/jzznllvnc-dark.png" alt="Brand Logo Background" class="brand-logo-background" id="aboutBrandLogo"> </div>
             </div>
         </section>
 
@@ -178,16 +168,14 @@
                         </p>
                         <div class="social-links">
                             <a href="#" id="phoneNumberLink" data-phone-number="+63 9777323270">
-                                <img src="./assets/icons/phone.svg" alt="Call / SMS" class="social-icon" id="callIcon">
-                                <span>Call / SMS</span>
+                                <img src="./assets/icons/phone-white.svg" alt="Call / SMS" class="social-icon" id="callIcon"> <span>Call / SMS</span>
                             </a>
                             <a href="https://www.linkedin.com/in/jazznelle-vince-arambulo-b65714188/" target="_blank" rel="noopener noreferrer">
                                 <img src="./assets/icons/linkedin.svg" alt="LinkedIn" class="social-icon">
                                 <span>LinkedIn</span>
                             </a>
                             <a href="https://github.com/Jzznllvnc" target="_blank" rel="noopener noreferrer">
-                                <img src="./assets/icons/github.svg" alt="GitHub" class="social-icon" id="githubIcon">
-                                <span>GitHub</span>
+                                <img src="./assets/icons/github-white.svg" alt="GitHub" class="social-icon" id="githubIcon"> <span>GitHub</span>
                             </a>
                         </div>
                     </div>

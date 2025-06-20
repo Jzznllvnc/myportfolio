@@ -7,10 +7,8 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
     <link rel="stylesheet" href="style.css">
-    <link rel="icon" href="./assets/icons/jzznllvnc.png" type="image/png">
-</head>
-<body class="gallery-page">
-    <div class="gallery-container">
+    <link rel="icon" href="./assets/icons/jzznllvnc-dark.png" type="image/png"> </head>
+<body class="gallery-page dark-mode"> <div class="gallery-container">
         <div class="back-home-button-wrapper">
             <a href="index.php#works" class="btn back-home-btn">← Back to Home</a>
         </div>

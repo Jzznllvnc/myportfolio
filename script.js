@@ -25,16 +25,12 @@ document.addEventListener('DOMContentLoaded', function() {
     const allNavLinks = [...headerNavLinks, ...dropdownNavLinks];
     const sections = document.querySelectorAll('main section');
     const scrollToTopBtn = document.getElementById('scrollToTopBtn');
-    const themeToggleButton = document.getElementById('themeToggleButton');
-    const brandLogo = document.getElementById('brandLogo');
-    const sunIcon = document.getElementById('sunIcon');
-    const moonIcon = document.getElementById('moonIcon');
-    const themeModeText = document.getElementById('themeModeText');
+    // Removed: themeToggleButton, sunIcon, moonIcon, themeModeText
     const menuBarContainer = document.getElementById('menuBarContainer');
     const menuBarIcon = document.getElementById('menuBarIcon');
     const dropdownMenu = document.getElementById('dropdownMenu');
 
-    // New icon elements
+    // New icon elements (these are now assumed to always point to dark versions)
     const callIcon = document.getElementById('callIcon');
     const githubIcon = document.getElementById('githubIcon');
 
@@ -46,62 +42,8 @@ document.addEventListener('DOMContentLoaded', function() {
         yearSpan.textContent = new Date().getFullYear();
     }
 
-    const enableDarkMode = () => {
-        document.body.classList.add('dark-mode');
-        brandLogo.src = './assets/icons/jzznllvnc-dark.png';
-        localStorage.setItem('theme', 'dark');
-        sunIcon.style.opacity = '0';
-        moonIcon.style.opacity = '1';
-        themeModeText.textContent = 'Switch to Light Mode';
-
-        const aboutBrandLogo = document.getElementById('aboutBrandLogo');
-        if (aboutBrandLogo) {
-            aboutBrandLogo.src = './assets/icons/jzznllvnc-dark.png';
-        }
-
-        if (callIcon) {
-            callIcon.src = './assets/icons/phone-white.svg';
-        }
-        if (githubIcon) {
-            githubIcon.src = './assets/icons/github-white.svg';
-        }
-    };
-
-    const disableDarkMode = () => {
-        document.body.classList.remove('dark-mode');
-        brandLogo.src = './assets/icons/jzznllvnc.png';
-        localStorage.setItem('theme', 'light');
-        sunIcon.style.opacity = '1';
-        moonIcon.style.opacity = '0';
-        themeModeText.textContent = 'Switch to Dark Mode';
-
-        const aboutBrandLogo = document.getElementById('aboutBrandLogo');
-        if (aboutBrandLogo) {
-            aboutBrandLogo.src = './assets/icons/jzznllvnc.png';
-        }
-
-        if (callIcon) {
-            callIcon.src = './assets/icons/phone.svg';
-        }
-        if (githubIcon) {
-            githubIcon.src = './assets/icons/github.svg';
-        }
-    };
-
-    const savedTheme = localStorage.getItem('theme');
-    if (savedTheme === 'dark') {
-        enableDarkMode();
-    } else {
-        disableDarkMode();
-    }
-
-    themeToggleButton.addEventListener('click', () => {
-        if (document.body.classList.contains('dark-mode')) {
-            disableDarkMode();
-        } else {
-            enableDarkMode();
-        }
-    });
+    // Removed: enableDarkMode and disableDarkMode functions
+    // Removed: savedTheme and themeToggleButton event listener
 
     const updateActiveNavLink = () => {
         const headerHeight = mainHeader.offsetHeight;
