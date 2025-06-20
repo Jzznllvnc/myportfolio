@@ -1151,6 +1151,7 @@ body.dark-mode .dropdown-menu ul li a {
 
     .contact-form {
         flex: 1;
+        width: 100%;
         max-width: none;
         margin: 0;
         padding: 2.5rem;
@@ -1365,6 +1366,37 @@ body.dark-mode .gallery-container h2 {
     position: relative;
 }
 
+.gallery-item img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 0.75rem;
+    object-fit: cover;
+    transition: transform 0.4s ease-out;
+}
+
+.gallery-item-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to top, rgba(123, 97, 255, 0.9), rgba(123, 97, 255, 0.6));
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+    opacity: 0;
+    transform: translateY(100%);
+    transition: opacity 0.4s ease-out, transform 0.4s ease-out;
+    text-align: center;
+    border-radius: 0.75rem;
+    box-sizing: border-box;
+    pointer-events: auto;
+}
+
 body.dark-mode .gallery-item {
     background-color: var(--dark-mode-card-bg);
     box-shadow: 0 6px 18px rgba(0, 0, 0, 0.2), 0 2px 4px rgba(0,0,0,0.1);
@@ -1376,71 +1408,50 @@ body.dark-mode .gallery-item {
     box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15), 0 4px 8px rgba(0,0,0,0.07);
 }
 
+.gallery-item:hover .gallery-item-overlay {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.gallery-item-overlay .overlay-title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.3s ease-out 0.2s, transform 0.3s ease-out 0.2s;
+    pointer-events: none;
+}
+
+.gallery-item-overlay .overlay-description {
+    font-size: 0.95rem;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.3s ease-out 0.3s, transform 0.3s ease-out 0.3s;
+}
+
+.gallery-item:hover .overlay-title,
+.gallery-item:hover .overlay-description {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.gallery-item:hover img {
+    transform: scale(0.95);
+}
+
 body.dark-mode .gallery-item:hover {
     box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3), 0 4px 8px rgba(0,0,0,0.15);
 }
 
-.gallery-item-content {
-    position: relative;
-    width: 100%;
-    height: 100%;
-    display: block;
+/* Dark mode adjustments for overlay text */
+body.dark-mode .gallery-item-overlay .overlay-title,
+body.dark-mode .gallery-item-overlay .overlay-description {
+    color: white; /* Ensure text remains white in dark mode */
 }
 
-.gallery-item img {
-    width: 100%;
-    height: auto;
-    display: block;
-    border-radius: 0.75rem;
-    object-fit: cover;
-}
 
-.image-description-overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(123, 97, 255, 0.9);
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    color: #ffffff;
-    opacity: 0;
-    transform: translateY(20px);
-    transition: opacity 0.3s ease, transform 0.3s ease;
-    border-radius: 0.75rem;
-    padding: 1rem;
-    box-sizing: border-box;
-}
-
-.gallery-item:hover .image-description-overlay {
-    opacity: 1;
-    transform: translateY(0);
-}
-
-.image-description-overlay.show-briefly {
-    opacity: 1;
-    transform: translateY(0);
-}
-
-.image-description-overlay h3 {
-    font-size: 1.8rem;
-    font-weight: 700;
-    margin-bottom: 0.5rem;
-    color: #ffffff;
-}
-
-.image-description-overlay p {
-    font-size: 1rem;
-    line-height: 1.5;
-    color: #f0f0f0;
-    margin-bottom: 0;
-}
-
-@media (max-width: 767px) {
+@media (max-width: 768px) {
     .gallery-container {
         padding: 0 1rem;
     }
@@ -1451,30 +1462,10 @@ body.dark-mode .gallery-item:hover {
         grid-template-columns: 1fr;
         gap: 1.5rem;
     }
-
-    .image-description-overlay {
-        position: absolute;
-        height: 100%;
-        background-color: rgba(123, 97, 255, 0.9);
-        border-radius: 0.75rem;
-        top: 0;
-        left: 0;
-        padding-top: 1rem;
-        padding-bottom: 1rem;
+    .gallery-item-overlay .overlay-title {
+        font-size: 1.2rem;
     }
-
-    .gallery-item-content {
-        display: block
-    }
-
-    .gallery-item img {
-        border-radius: 0.75rem;
-    }
-
-    .image-description-overlay h3 {
-        font-size: 1.5rem;
-    }
-    .image-description-overlay p {
-        font-size: 0.9rem;
+    .gallery-item-overlay .overlay-description {
+        font-size: 0.85rem;
     }
 }

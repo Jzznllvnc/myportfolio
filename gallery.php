@@ -17,8 +17,7 @@
 
         <h2>Landing Page</h2>
         <div class="image-gallery">
-            <div class="gallery-item">
-                <img src="./assets/images/landing.png" alt="Landing Page Screenshot">
+            <div class="gallery-item"> <img src="./assets/images/landing.png" alt="Landing Page Screenshot">
             </div>
         </div>
 
@@ -26,49 +25,34 @@
         <p><i class="fa-solid fa-circle-info"></i> <i>Click on any image to see preview.</i></p>
         <br>
         <div class="image-gallery">
-            <div class="gallery-item">
-                <div class="gallery-item-content previewable">
-                    <img src="./assets/images/admin-image1.png" alt="Admin Screenshot 1">
-                    <div class="image-description-overlay">
-                        <h3>Admin Dashboard</h3>
-                        <p>Overview of key metrics and quick access to management tools.</p>
-                    </div>
+            <div class="gallery-item previewable"> <img src="./assets/images/admin-image1.png" alt="Admin Screenshot 1">
+                <div class="gallery-item-overlay">
+                    <span class="overlay-title">Dashboard Overview</span>
+                    <p class="overlay-description">A comprehensive view of key recruitment metrics.</p>
                 </div>
             </div>
-            <div class="gallery-item">
-                <div class="gallery-item-content previewable">
-                    <img src="./assets/images/admin-image2.png" alt="Admin Screenshot 2">
-                    <div class="image-description-overlay">
-                        <h3>Recruitment Management</h3>
-                        <p>Manage applicant accounts, roles, and permissions efficiently.</p>
-                    </div>
+            <div class="gallery-item previewable"> <img src="./assets/images/admin-image2.png" alt="Admin Screenshot 2">
+                <div class="gallery-item-overlay">
+                    <span class="overlay-title">Recruitment Management</span>
+                    <p class="overlay-description">A key section wherein admin can add job, manage applicant account, offer approval, and manage documents.</p>
                 </div>
             </div>
-            <div class="gallery-item">
-                <div class="gallery-item-content previewable">
-                    <img src="./assets/images/admin-image3.png" alt="Admin Screenshot 3">
-                    <div class="image-description-overlay">
-                        <h3>Employee Profile Setup</h3>
-                        <p>Manage and view detailed profiles, application, and statuses of candidates.</p>
-                    </div>
+            <div class="gallery-item previewable"> <img src="./assets/images/admin-image3.png" alt="Admin Screenshot 3">
+                <div class="gallery-item-overlay">
+                    <span class="overlay-title">Employee Profile Setup</span>
+                    <p class="overlay-description">Input integrated applicants who passed the learning management, and their schedule.</p>
                 </div>
             </div>
-            <div class="gallery-item">
-                <div class="gallery-item-content previewable">
-                    <img src="./assets/images/admin-image4.png" alt="Admin Screenshot 4">
-                    <div class="image-description-overlay">
-                        <h3>Employee Performance Metrics</h3>
-                        <p>Access detailed reports and analytical insights for better decision-making.</p>
-                    </div>
+            <div class="gallery-item previewable"> <img src="./assets/images/admin-image4.png" alt="Admin Screenshot 4">
+                <div class="gallery-item-overlay">
+                    <span class="overlay-title">Performance Management</span>
+                    <p class="overlay-description">Performance metrics of employees for better tracking.</p>
                 </div>
             </div>
-            <div class="gallery-item">
-                <div class="gallery-item-content previewable">
-                    <img src="./assets/images/admin-image5.png" alt="Admin Screenshot 5">
-                    <div class="image-description-overlay">
-                        <h3>Recognition Management</h3>
-                        <p>Providing recognition awards and certificates for employees.</p>
-                    </div>
+            <div class="gallery-item previewable"> <img src="./assets/images/admin-image5.png" alt="Admin Screenshot 5">
+                <div class="gallery-item-overlay">
+                    <span class="overlay-title">Recognition Management</span>
+                    <p class="overlay-description">Applying recoginition to employees who stands out, as well as those who needs improvement.</p>
                 </div>
             </div>
         </div>
@@ -77,40 +61,28 @@
         <p><i class="fa-solid fa-circle-info"></i> <i>Click on any image to see preview.</i></p>
         <br>
         <div class="image-gallery">
-            <div class="gallery-item">
-                <div class="gallery-item-content previewable">
-                    <img src="./assets/images/user-image1.png" alt="Applicant Screenshot 1">
-                    <div class="image-description-overlay">
-                        <h3>Job Posting</h3>
-                        <p>Interested applicants can select their preferred job position and roles.</p>
-                    </div>
+            <div class="gallery-item previewable"> <img src="./assets/images/user-image1.png" alt="Applicant Screenshot 1">
+                <div class="gallery-item-overlay">
+                    <span class="overlay-title">Job Posting</span>
+                    <p class="overlay-description">Job posting that applicants can choose to apply.</p>
                 </div>
             </div>
-            <div class="gallery-item">
-                <div class="gallery-item-content previewable">
-                    <img src="./assets/images/user-image2.png" alt="Applicant Screenshot 2">
-                    <div class="image-description-overlay">
-                        <h3>Job Posting form</h3>
-                        <p>Browse and apply for available job openings.</p>
-                    </div>
+            <div class="gallery-item previewable"> <img src="./assets/images/user-image2.png" alt="Applicant Screenshot 2">
+                <div class="gallery-item-overlay">
+                    <span class="overlay-title">Job Application Form</span>
+                    <p class="overlay-description">Intuitive form for submitting applications.</p>
                 </div>
             </div>
-            <div class="gallery-item">
-                <div class="gallery-item-content previewable">
-                    <img src="./assets/images/user-image3.png" alt="Applicant Screenshot 3">
-                    <div class="image-description-overlay">
-                        <h3>Job Role Details</h3>
-                        <p>Applicants can view important details regarding job role, responsibilities, qualifications.</p>
-                    </div>
+            <div class="gallery-item previewable"> <img src="./assets/images/user-image3.png" alt="Applicant Screenshot 3">
+                <div class="gallery-item-overlay">
+                    <span class="overlay-title">Job Role Information</span>
+                    <p class="overlay-description">Detailed descriptions regarding job roles.</p>
                 </div>
             </div>
-            <div class="gallery-item">
-                <div class="gallery-item-content previewable">
-                    <img src="./assets/images/user-image4.png" alt="Applicant Screenshot 4">
-                    <div class="image-description-overlay">
-                        <h3>Application Status</h3>
-                        <p>Section where applicants can view the status of their submitted application.</p>
-                    </div>
+            <div class="gallery-item previewable"> <img src="./assets/images/user-image4.png" alt="Applicant Screenshot 4">
+                <div class="gallery-item-overlay">
+                    <span class="overlay-title">Application Status</span>
+                    <p class="overlay-description">Applicants can view the status of their submitted application.</p>
                 </div>
             </div>
         </div>
@@ -121,13 +93,12 @@
         </div>
         <script>
             
-        document.querySelectorAll('.gallery-item-content.previewable').forEach(item => {
+        // Simple image preview
+        document.querySelectorAll('.gallery-item.previewable').forEach(item => {
             item.addEventListener('click', function() {
-                const imgElement = this.querySelector('img');
-                if (imgElement) {
-                    document.getElementById('imgPreview').src = imgElement.src;
-                    document.getElementById('imgPreviewModal').style.display = 'flex';
-                }
+                const imgSrc = this.querySelector('img').src;
+                document.getElementById('imgPreview').src = imgSrc;
+                document.getElementById('imgPreviewModal').style.display = 'flex';
             });
         });
         document.getElementById('closePreview').onclick = function() {
@@ -136,43 +107,6 @@
         document.getElementById('imgPreviewModal').onclick = function(e) {
             if (e.target === this) this.style.display = 'none';
         };
-
-        if (window.matchMedia("(max-width: 767px)").matches) {
-            const observerOptions = {
-                root: null,
-                rootMargin: '-10% 0px -10% 0px',
-                threshold: 0.7
-            };
-
-            const observer = new IntersectionObserver((entries, observer) => {
-                entries.forEach(entry => {
-                    const overlay = entry.target.querySelector('.image-description-overlay');
-                    if (overlay) {
-                        if (entry.isIntersecting) {
-                            if (overlay.showTimeout) {
-                                clearTimeout(overlay.showTimeout);
-                            }
-                            overlay.classList.add('show-briefly');
-                            overlay.showTimeout = setTimeout(() => {
-                                overlay.classList.remove('show-briefly');
-                                overlay.showTimeout = null;
-                            }, 3000);
-                        } else {
-                            if (overlay.showTimeout) {
-                                clearTimeout(overlay.showTimeout);
-                                overlay.showTimeout = null;
-                            }
-                            overlay.classList.remove('show-briefly');
-                        }
-                    }
-                });
-            }, observerOptions);
-
-            document.querySelectorAll('.gallery-item-content').forEach(item => {
-                observer.observe(item);
-            });
-        }
-        
         </script>
         </div>
 </body>
