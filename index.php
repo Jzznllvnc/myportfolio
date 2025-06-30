@@ -92,18 +92,18 @@
                         </div>
                         <div class="project-card">
                             <img
-                                src="./assets/images/techno.png"
+                                src="./assets/images/craftwise.png"
                                 alt="Project 2"
                                 onerror="this.onerror=null;this.src='https://placehold.co/400x250/F9FAFB/1A202C?text=Placeholder';"
                             />
                             <div class="project-info">
-                                <h3>RentMySkill</h3>
+                                <h3>CraftWise</h3>
                                 <p>
-                                    A technopreneurship business proposal that we did in my third-year, second semester of college.
+                                    Made an e-commerce web platform for custom PC building, featuring a smart build rating system with recommendations, and an AI chat assistant, all in a responsive design.
                                     <br><br>
-                                    Tools used: <strong>Google Docs, Figma, Canva</strong>
+                                    Tools used: <strong>HTML, TailwindCSS, JS (with Ajax), PHP, MySQL & Apache, Gemini API</strong>
                                 </p>
-                                <a href="./assets/documents/technopreneurship.pdf" download="technopreneurship.pdf" class="btn">Download PDF</a>
+                                <a href="https://craftwise.web1337.net" target="_blank" rel="noopener noreferrer" class="btn">Open Website</a>
                             </div>
                         </div>
                     <div class="project-card">
